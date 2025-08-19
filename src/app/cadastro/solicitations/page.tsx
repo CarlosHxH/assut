@@ -73,9 +73,11 @@ export default function SolicitationsPage() {
 
         try {
 
-            const { data, error } = await supabase.rpc('search_customers', { prefix: search })
+            const { data, error } = await supabase.rpc('search_customers_by_id', { search_term: search });
 
-            if (error) {
+            if (error || data.length === 0) {
+                console.log(error);
+
                 setError('Solicitação não encontrada');
             } else {
                 const { id, nome, ...fields } = data[0];
@@ -84,6 +86,8 @@ export default function SolicitationsPage() {
                 setSolicitation({ id: newId, nome: newNome, ...fields });
             }
         } catch (err) {
+            console.log(err);
+
             setError('Erro ao buscar solicitação');
         } finally {
             setLoading(false);
@@ -179,7 +183,7 @@ export default function SolicitationsPage() {
                                         <div className="space-y-2">
                                             <div>
                                                 <span className="text-sm font-medium text-gray-500 dark:text-white">Descrição:</span>
-                                                <p className="text-gray-900 dark:text-gray-100">{"Socilitação de carteirinha"}</p>
+                                                <p className="text-gray-900 dark:text-gray-100">{"Socilitação"}</p>
                                             </div>
                                             <div>
                                                 <span className="text-sm font-medium text-gray-500 dark:text-white">Solicitante:</span>
