@@ -1,0 +1,49 @@
+{
+  "name": "assut",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "443": "next dev --turbopack --experimental-https --hostname 0.0.0.0 -p 443",
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "ssl": "next dev --turbopack -- --experimental-https -p 3443",
+    "https": "yarn dev --experimental-https -p 80 --hostname 0.0.0.0",
+    "http": "yarn dev -p 80 --hostname 0.0.0.0",
+    "devs": "next dev --turbopack --hostname 0.0.0.0",
+    "dev-external": "next dev --turbopack --hostname 0.0.0.0 -p 80"
+  },
+  "dependencies": {
+    "@getyoti/react-face-capture": "^2.7.0",
+    "@headlessui/react": "^2.2.7",
+    "@heroicons/react": "^2.2.0",
+    "@material-tailwind/react": "^2.1.10",
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.55.0",
+    "axios": "^1.11.0",
+    "flowbite-react": "^0.12.4",
+    "lucide-react": "^0.539.0",
+    "next": "^15.4.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-webcam": "^7.2.0",
+    "supabase": "^2.34.3",
+    "zod": "^4.0.17"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@types/node": "^24.0.15",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "eslint": "^9.31.0",
+    "eslint-config-next": "^15.4.2",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3"
+  }
+}
