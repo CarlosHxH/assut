@@ -1,6 +1,4 @@
 "use client"
-import AppBar from "@/components/Appbar";
-import Footer from "@/components/footer";
 import { FormProvider } from "@/context";
 
 export default function Layout({
@@ -10,9 +8,7 @@ export default function Layout({
 }) {
   return (
     <FormProvider storageKey="AssutKey" autoSave={true}>
-      <AppBar />
       {children}
-      <Footer />
     </FormProvider>
   )
 }
