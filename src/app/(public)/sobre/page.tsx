@@ -197,14 +197,14 @@ const AssutSobre: React.FC = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-600 via-gray-600 to-gray-800 relative overflow-hidden">
             <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-      `}</style>
+                @keyframes float {
+                    0%, 100% { transform: translateY(0px); }
+                    50% { transform: translateY(-20px); }
+                }
+                .animate-float {
+                    animation: float 6s ease-in-out infinite;
+                }
+            `}</style>
 
             {/* Floating Background Elements */}
             <div className="fixed inset-0 pointer-events-none">

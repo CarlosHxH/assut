@@ -4,11 +4,12 @@ import { Step } from "@/components/StepperProgress";
 import PersonalForm from "./PersonalForm";
 import AddressForm from "./AddressForm";
 import DocumentForm from "./DocumentForm";
-import { IdCard, IdCardLanyard, MapPinHouse } from "lucide-react";
+import { IdCard, IdCardLanyard, MapPinHouse, X } from "lucide-react";
 import StepperWithNavigation from "@/components/StepperProgress";
 import { useForm } from "@/context";
 import { useRouter } from "next/navigation";
 import { Button, Spinner } from "flowbite-react";
+import SimpleAnimate from "@/components/SImpleAnimate";
 
 const App: React.FC = () => {
   const router = useRouter();
@@ -48,16 +49,10 @@ const App: React.FC = () => {
         <div className="p-5 bg-gray-200 dark:bg-gray-500/50 rounded-xl">
           <div>
             <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">Enviar Solicitação</h2>
-
-            <div className="text-center">
-
-            </div>
-
+            <div className="text-center"></div>
           </div>
           <div className="flex justify-end gap-2">
-            {error &&
-              <Button color={"gray"} onClick={() => setCurrentStep(1)}>Voltar</Button>
-            }
+            {error && <Button color={"gray"} onClick={() => setCurrentStep(1)}>Voltar</Button>}
             <Button type="submit" disabled={isSubmiting || !!error} className="gap-3">
               {isSubmiting && <Spinner size="md" />} {"Solicitar"}
             </Button>
@@ -68,32 +63,27 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen space-y-8 bg-white dark:bg-gray-900">
-      <div>
-        {error && (
-          <div style={{
-            background: '#fee',
-            color: '#c33',
-            padding: '15px',
-            borderRadius: '5px',
-            marginBottom: '20px',
-            fontSize: '14px'
-          }}>
-            {error}
-          </div>
-        )}
-        <StepperWithNavigation
-          steps={steps}
-          currentStep={currentStep}
-          onStepChange={setCurrentStep}
-          customButtons={true}
-        >
-          {getStepContent(currentStep)}
-        </StepperWithNavigation>
-      </div>
+    <SimpleAnimate>
+      <div className="min-h-screen space-y-8 bg-white dark:bg-gray-900">
+        <div>
+          {error && (
+            <div id="toast-top-right" className="fixed flex items-center w-full max-w-xs p-4 space-x-4 text-red-500 bg-white divide-x rtl:divide-x-reverse divide-gray-200 rounded-lg shadow-sm top-5 right-5 dark:text-red-400 dark:divide-gray-700 dark:bg-gray-800" role="alert">
+              {error}
+              <button className="text-white ms-auto hover:bg-gray-700 rounded-4xl"><X /></button>
+            </div>
+          )}
+          <StepperWithNavigation
+            steps={steps}
+            currentStep={currentStep}
+            onStepChange={setCurrentStep}
+            customButtons={true}
+          >
+            {getStepContent(currentStep)}
+          </StepperWithNavigation>
+        </div>
 
-      {/* Controles de demonstração */}
-      {/*<div className="mt-8 text-center">
+        {/* Controles de demonstração */}
+        {/*<div className="mt-8 text-center">
         <div className="inline-flex gap-2 p-2 bg-white dark:bg-gray-800 rounded-lg shadow-md">
           <button
             onClick={() => setCurrentStep(1)}
@@ -125,7 +115,8 @@ const App: React.FC = () => {
         </div>
       </div>*/}
 
-    </div >
+      </div >
+    </SimpleAnimate>
   );
 };
 export default App;
