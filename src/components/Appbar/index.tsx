@@ -17,7 +17,7 @@ export default function AppBar() {
     const navigation = [
         { name: 'Home', href: '/', current: '/' === path },
         { name: 'Cadastro', href: '/cadastro', current: '/cadastro' === path },
-        { name: 'Login', href: '#', current: '/login' === path },
+        { name: 'Login', href: '/login', current: '/login' === path },
         { name: 'Sobre', href: '/sobre', current: '/sobre' === path },
     ]
 

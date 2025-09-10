@@ -70,7 +70,7 @@ export function getPriorityColor(priority: string): string {
     }
 }
 
-export function debounce<T extends (...args: any[]) => any>(
+export function debounce<T extends (...args: T[]) => T>(
     func: T,
     delay: number
 ): (...args: Parameters<T>) => void {
@@ -89,11 +89,11 @@ export function filterData<T>(
 ): T[] {
     return data.filter(item => {
         const matchesSearch = searchTerm === '' ||
-            Object.values(item as any).some(value =>
+            Object.values(item as T[]).some(value =>
                 value && value.toString().toLowerCase().includes(searchTerm.toLowerCase())
             )
         const matchesStatus = statusFilter === 'all' ||
-            (item[statusKey] as any) === statusFilter
+            (item[statusKey] as T) === statusFilter
         return matchesSearch && matchesStatus
     })
 }
