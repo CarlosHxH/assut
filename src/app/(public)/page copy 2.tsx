@@ -76,8 +76,6 @@ const App: React.FC = () => {
             </p>
           </div>
 
-          <NossaVisaoComponent/>
-
           {/* Cards Grid */}
           <div className="mb-4 grid justify-center gap-4 md:grid-cols-2 lg:grid-cols-3">
             {slider.map((item, i) => (
