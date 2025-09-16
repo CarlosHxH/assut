@@ -3,7 +3,7 @@ import { useState, useMemo } from 'react'
 import { Plus, Eye, Edit, Check, XCircle, Search } from 'lucide-react'
 import DashboardLayout from '@/components/DashboardLayout'
 import Modal from '@/components/Modal'
-import { User, StatsCard } from '@/types'
+import { User, StatsCard } from '@/@types'
 import supabase from '@/lib/supabase'
 
 const statsCards: StatsCard[] = [

@@ -35,7 +35,7 @@ export default function AuthPage() {
             }
         } catch (error) {
             console.error('Login error:', error)
-            setError(error?.message || 'An unexpected error occurred')
+            setError((error as Error)?.message || 'An unexpected error occurred')
         } finally {
             setLoading(false)
         }

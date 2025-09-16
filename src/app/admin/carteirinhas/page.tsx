@@ -3,7 +3,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { CreditCard, Plus, Check, Clock, XCircle, Search, Eye } from 'lucide-react'
 import DashboardLayout from '@/components/DashboardLayout'
 import Modal from '@/components/Modal'
-import { User } from '@/types'
+import { User } from '@/@types'
 import supabase from '@/lib/supabase'
 
 const mockUsers: User[] = [
@@ -218,8 +218,8 @@ export default function CarteirinhasPage() {
                                 <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400 mb-3">
                                     <span>Criada: {new Date(user.created_at).toLocaleDateString('pt-BR')}</span>
                                     <span className={`px-2 py-1 text-xs rounded-full ${user.status === 'Ativo'
-                                            ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
-                                            : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300'
+                                        ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
+                                        : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300'
                                         }`}>
                                         {user.status}
                                     </span>

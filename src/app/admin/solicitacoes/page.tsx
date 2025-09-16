@@ -3,7 +3,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { FileText, Check, AlertTriangle, Eye, XCircle, Search } from 'lucide-react'
 import DashboardLayout from '@/components/DashboardLayout'
 import Modal from '@/components/Modal'
-import { User } from '@/types'
+import { User } from '@/@types'
 import supabase from '@/lib/supabase'
 
 

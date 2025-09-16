@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import NossaVisaoComponent from "@/components/NossaVisaoComponent";
 
 interface SlideItem {
   href: string;
@@ -76,7 +77,7 @@ const App: React.FC = () => {
             </p>
           </div>
 
-          <NossaVisaoComponent/>
+          <NossaVisaoComponent />
 
           {/* Cards Grid */}
           <div className="mb-4 grid justify-center gap-4 md:grid-cols-2 lg:grid-cols-3">

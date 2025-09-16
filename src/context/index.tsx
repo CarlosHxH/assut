@@ -172,7 +172,7 @@ export function FormProvider({
   useEffect(() => {
     const savedData = storageUtils.load(storageKey);
     if (savedData) {
-      setFormData(prevData => ({ ...createDefaultPersonData(), ...savedData }));
+      setFormData((prevData: PersonData) => ({ ...prevData, ...createDefaultPersonData(), ...savedData }));
     }
   }, [storageKey]);
 

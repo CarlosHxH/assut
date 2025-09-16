@@ -35,9 +35,9 @@ export default function LoginPage() {
                 // Força um refresh completo para atualizar o estado de autenticação
                 window.location.href = '/dashboard'
             }
-        } catch (error: any) {
+        } catch (error) {
             console.error('Login error:', error)
-            setError(error.message || 'An unexpected error occurred')
+            setError((error as Error).message || 'An unexpected error occurred')
         } finally {
             setLoading(false)
         }
@@ -58,9 +58,9 @@ export default function LoginPage() {
             if (oauthError) {
                 setError(oauthError.message)
             }
-        } catch (error: any) {
+        } catch (error) {
             console.error('Google login error:', error)
-            setError(error.message || 'An unexpected error occurred')
+            setError((error as Error).message || 'An unexpected error occurred')
         } finally {
             setLoading(false)
         }

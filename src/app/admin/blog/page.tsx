@@ -3,7 +3,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { BookOpen, Plus, Eye, Edit, Check, Search } from 'lucide-react'
 import DashboardLayout from '@/components/DashboardLayout'
 import Modal from '@/components/Modal'
-import { BlogPost } from '@/types'
+import { BlogPost } from '@/@types'
 import supabase from '@/lib/supabase'
 
 const mockBlogPosts: BlogPost[] = [
@@ -150,8 +150,8 @@ export default function BlogPage() {
                             <div className="p-6">
                                 <div className="flex items-center justify-between mb-3">
                                     <span className={`px-2 py-1 text-xs rounded-full ${post.status === 'published'
-                                            ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
-                                            : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300'
+                                        ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
+                                        : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300'
                                         }`}>
                                         {post.status === 'published' ? 'Publicado' : 'Rascunho'}
                                     </span>

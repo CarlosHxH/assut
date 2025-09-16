@@ -3,7 +3,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { AlertTriangle, Plus, Eye, Edit, Check, Search } from 'lucide-react'
 import DashboardLayout from '@/components/DashboardLayout'
 import Modal from '@/components/Modal'
-import { Denuncia } from '@/types'
+import { Denuncia } from '@/@types'
 import supabase from '@/lib/supabase'
 
 const mockDenuncias: Denuncia[] = [
@@ -179,8 +179,8 @@ export default function DenunciasPage() {
                                         <div className="flex items-center space-x-2 mb-2">
                                             <h4 className="text-sm font-medium text-gray-900 dark:text-white">{denuncia.reason}</h4>
                                             <span className={`px-2 py-1 text-xs rounded-full ${denuncia.priority === 'high' ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300' :
-                                                    denuncia.priority === 'medium' ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300' :
-                                                        'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
+                                                denuncia.priority === 'medium' ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300' :
+                                                    'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
                                                 }`}>
                                                 {denuncia.priority === 'high' ? 'Alta' : denuncia.priority === 'medium' ? 'Média' : 'Baixa'}
                                             </span>
@@ -194,9 +194,9 @@ export default function DenunciasPage() {
                                     </div>
                                     <div className="flex items-center space-x-2 ml-4">
                                         <span className={`px-3 py-1 text-sm rounded-full ${denuncia.status === 'open' ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300' :
-                                                denuncia.status === 'investigating' ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300' :
-                                                    denuncia.status === 'resolved' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' :
-                                                        'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300'
+                                            denuncia.status === 'investigating' ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300' :
+                                                denuncia.status === 'resolved' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' :
+                                                    'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300'
                                             }`}>
                                             {denuncia.status === 'open' ? 'Aberta' :
                                                 denuncia.status === 'investigating' ? 'Investigando' :

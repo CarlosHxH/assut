@@ -5,7 +5,7 @@ import {
     Users, FileText, AlertTriangle, BookOpen, Settings,
     CreditCard, Menu, X, Bell, Search, Moon, Sun, User
 } from 'lucide-react'
-import { SidebarItem } from '@/types'
+import { SidebarItem } from '@/@types'
 import supabase from '@/lib/supabase'
 import { User as typeUser } from '@supabase/supabase-js'
 

@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { X, Save } from 'lucide-react'
-import { ModalProps } from '@/types'
+import { ModalProps } from '@/@types'
 
 export default function Modal({ isOpen, onClose, type, item, onSave, context }: ModalProps) {
     const [editForm, setEditForm] = useState<any>({})

@@ -13,7 +13,7 @@ import SimpleAnimate from "@/components/SImpleAnimate";
 
 const App: React.FC = () => {
   const router = useRouter();
-  const { error, handlerSubmit, clearError, isSubmiting } = useForm();
+  const { error, handlerSubmit, isSubmiting } = useForm();
 
   const [currentStep, setCurrentStep] = useState(1);
 
