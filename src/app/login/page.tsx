@@ -40,8 +40,11 @@ export default function LoginPage() {
         } catch (error: any) {
             console.error('Login error:', error)
 <<<<<<< HEAD
+<<<<<<< HEAD
             setError((error as Error)?.message || 'An unexpected error occurred')
 =======
+=======
+>>>>>>> parent of 351f9ec (Auth page)
             setError(error.message || 'An unexpected error occurred')
         } finally {
             setLoading(false)
@@ -66,6 +69,9 @@ export default function LoginPage() {
         } catch (error: any) {
             console.error('Google login error:', error)
             setError(error.message || 'An unexpected error occurred')
+<<<<<<< HEAD
+>>>>>>> parent of 351f9ec (Auth page)
+=======
 >>>>>>> parent of 351f9ec (Auth page)
         } finally {
             setLoading(false)
