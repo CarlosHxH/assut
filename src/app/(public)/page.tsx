@@ -17,7 +17,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ item, className = "" }) => {
   return (
     <div
-      className={`max-w-md rounded- border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800 ${className}`}
+      className={`max-w-md rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800 ${className}`}
     >
       <a href={item.href}>
         <Image
@@ -61,9 +61,9 @@ const App: React.FC = () => {
   ];
 
   return (
-    <main className={`min-h-screen bg-white/95 dark:bg-gray-900 backdrop-blur-lg shadow-2xl p-8 md:p-12 transform transition-all duration-1000 ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+    <main className={`min-h-screen bg-white/95 dark:bg-gray-900 backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-12 transform transition-all duration-1000 ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}>
-      <div>
+      <div className="">
 
         <div className="mx-auto max-w-7xl space-y-8 px-4 py-8 sm:px-6 lg:px-8">
           {/* Header */}
@@ -122,22 +122,27 @@ const App: React.FC = () => {
             </section>
           </div>
 
+          {/* Call to Action */}
+          <div className="rounded-lg bg-gray-600 p-8 text-center">
+            <h2 className="mb-4 text-2xl font-bold text-white">
+              Pronto para fazer sua denúncia?
+            </h2>
+            <p className="mb-6 text-blue-100">
+              Sua voz é importante para melhorar o transporte público em Mato
+              Grosso.
+            </p>
+
+            <a className="rounded-lg bg-white px-8 py-3 font-semibold text-blue-600 transition-colors hover:bg-gray-100" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeJbsMixWEy08VZchMWiu1ai5mPwobszE_LxmwUTeLIM0E_fA/viewform">
+              <button >
+                Fazer Denúncia
+              </button>
+            </a>
+          </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="bg-gray-200 dark:bg-gray-700 p-8 text-center my-4 w-full transform transition-all duration-1000 rounded-3xl">
-          <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
-            Pronto para fazer sua denúncia?
-          </h2>
-          <p className="mb-6 text-gray-800 dark:text-blue-100">
-            Sua voz é importante para melhorar o transporte público em Mato
-            Grosso.
-          </p>
-
-          <a className="rounded-lg bg-white px-8 py-3 font-semibold text-blue-600 hover:text-teal-50 transition-colors hover:bg-blue-500" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeJbsMixWEy08VZchMWiu1ai5mPwobszE_LxmwUTeLIM0E_fA/viewform">
-            <button >
-              Fazer Denúncia
-            </button>
+        <div className="rounded-lg bg-gray-800 p-8 text-center">
+          <a className="rounded-lg animate-pulse px-8 py-3 font-semibold text-white transition-colors" target="_blank" href="https://chat.whatsapp.com/DCjmMkcw3NKJdfJJw4jp1l?mode=r_c&fbclid=PAZXh0bgNhZW0CMTEAAaf6rsqSuDyTaSv5cfGLdTTxcA88pB8hJ7PMPh8qkMdmcynSFKx32lTYgUjsFA_aem_4VnX90k4JNH6P55UHyWd_Q">
+            Entre em contato conosco
           </a>
         </div>
 

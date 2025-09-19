@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, Youtube, MapPin, Phone, Mail } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from 'lucide-react';
 
 interface SocialLink {
     name: string;
@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
     ];
 
     return (
-        <footer className="bg-white dark:bg-gray-900 border-t border-gray-200">
+        <footer className="bg-white border-t border-gray-200">
             {/* Main Footer Content */}
             <div className="max-w-6xl mx-auto px-4 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -80,16 +80,16 @@ const Footer: React.FC = () => {
                     <div className="lg:col-span-1">
                         <div className="mb-4">
                             <h3 className="text-2xl font-bold text-blue-600">Assut</h3>
-                            <p className="text-gray-600 dark:text-gray-200 text-sm">Mato Grosso</p>
+                            <p className="text-gray-600 text-sm">Mato Grosso</p>
                         </div>
-                        <p className="text-gray-600 dark:text-gray-200 text-sm mb-6 leading-relaxed">
+                        <p className="text-gray-600 text-sm mb-6 leading-relaxed">
                             Prefeitura Municipal de Assut, trabalhando pelo desenvolvimento e bem-estar da nossa comunidade.
                         </p>
 
                         {/* Contact Info */}
                         <div className="space-y-2">
                             {contactInfo.map((info, index) => (
-                                <div key={index} className="flex items-center text-gray-600 dark:text-gray-200 text-sm">
+                                <div key={index} className="flex items-center text-gray-600 text-sm">
                                     <span className="text-blue-500 mr-2">{info.icon}</span>
                                     <span>{info.text}</span>
                                 </div>
@@ -99,13 +99,13 @@ const Footer: React.FC = () => {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Links Rápidos</h4>
+                        <h4 className="text-lg font-semibold text-gray-800 mb-4">Links Rápidos</h4>
                         <ul className="space-y-2">
                             {quickLinks.map((link, index) => (
                                 <li key={index}>
                                     <a
                                         href="#"
-                                        className="text-gray-600 dark:text-gray-200 hover:text-blue-600 text-sm transition-colors duration-200"
+                                        className="text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200"
                                     >
                                         {link}
                                     </a>
@@ -116,13 +116,13 @@ const Footer: React.FC = () => {
 
                     {/* Services */}
                     <div>
-                        <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Serviços</h4>
+                        <h4 className="text-lg font-semibold text-gray-800 mb-4">Serviços</h4>
                         <ul className="space-y-2">
                             {services.map((service, index) => (
                                 <li key={index}>
                                     <a
                                         href="#"
-                                        className="text-gray-600 dark:text-gray-200 hover:text-blue-600 text-sm transition-colors duration-200"
+                                        className="text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200"
                                     >
                                         {service}
                                     </a>
@@ -133,8 +133,8 @@ const Footer: React.FC = () => {
 
                     {/* Social Media */}
                     <div>
-                        <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Redes Sociais</h4>
-                        <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
+                        <h4 className="text-lg font-semibold text-gray-800 mb-4">Redes Sociais</h4>
+                        <p className="text-gray-600 text-sm mb-4">
                             Siga-nos nas redes sociais para ficar por dentro das novidades.
                         </p>
                         <div className="flex space-x-3">
