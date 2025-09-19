@@ -1,12 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import "tailwindcss/preflight";
-
 @import "tailwindcss";
-
-@import "tw-animate-css";
+@import "tailwindcss/preflight";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 @plugin "flowbite-react/plugin/tailwindcss";
+@import "tw-animate-css";
 @source "../../.flowbite-react/class-list.json";
 
 @custom-variant dark (&:where(.dark, .dark *));
