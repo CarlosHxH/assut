@@ -14,13 +14,6 @@ const AssutHomepage: React.FC = () => {
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<CarteirinhaSchema>({ resolver: zodResolver(carteirinhaSchema) });
 
-  const [formData, setFormData] = useState<CustomFormData>({
-    name: '',
-    email: '',
-    type: 'denuncia',
-    message: ''
-  });
-
   const [carteirinhaData, setCarteirinhaData] = useState<CarteirinhaData>(defaultCarteirinhaData);
 
   useEffect(() => {
@@ -40,20 +33,9 @@ const AssutHomepage: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
   const handleCarteirinhaInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setCarteirinhaData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setCarteirinhaData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -61,10 +43,7 @@ const AssutHomepage: React.FC = () => {
     if (file) {
       const reader = new FileReader();
       reader.onload = (e) => {
-        setCarteirinhaData(prev => ({
-          ...prev,
-          foto: e.target?.result as string
-        }));
+        setCarteirinhaData(prev => ({ ...prev, foto: e.target?.result as string }));
       };
       reader.readAsDataURL(file);
     }
@@ -102,16 +81,6 @@ const AssutHomepage: React.FC = () => {
       .replace(/\D/g, '')
       .replace(/(\d{2})(\d)/, '($1) $2')
       .replace(/(\d{4,5})(\d{4})$/, '$1-$2');
-  };
-
-  const handleSubmits = () => {
-    if (!formData.name || !formData.email || !formData.message) {
-      alert('Por favor, preencha todos os campos obrigatórios.');
-      return;
-    }
-    console.log('Formulário enviado:', formData);
-    alert('Sua mensagem foi enviada com sucesso!');
-    setFormData({ name: '', email: '', type: 'denuncia', message: '' });
   };
 
   return (
