@@ -30,14 +30,14 @@ export default function Page() {
       <AppBar />
 
       <div className="px-40">
-        <h1 className="my-5 text-2xl font-bold leading-none text-gray-900 dark:text-white">ASSUT-MT</h1>
+        <h1 className="my-5 text-2xl font-bold leading-none text-gray-900">ASSUT-MT</h1>
       </div>
 
       <StepperProgress>
         {/* Form */}
         <form onSubmit={handleSubmit} className="p-2">
 
-          <h3 className="mb-4 text-2xl font-medium leading-none text-gray-900 dark:text-white">
+          <h3 className="mb-4 text-2xl font-medium leading-none text-gray-900">
             Informações pessoais
           </h3>
 
@@ -46,7 +46,7 @@ export default function Page() {
             <div className="w-full col-span-2">
               <label
                 htmlFor="name"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-900"
               >
                 Nome completo
               </label>
